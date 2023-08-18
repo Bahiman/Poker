@@ -1,7 +1,7 @@
 #include "Deck.h"
 #include<algorithm>
 
-	void Deck::setDeck()
+void Deck::setDeck()
 	{	
 		for (int i = 2; i <= ACE; i++)
 		{
@@ -15,7 +15,7 @@
 		}
 	}
 
-	void Deck::shuffle()
+void Deck::shuffle()
 	{
 		std::random_device rd;
 		std::mt19937 g(rd());
@@ -26,7 +26,7 @@
 	#endif // DEBUG
 	}
 
-	void Deck::printAllCards()
+void Deck::printAllCards()
 	{
 		for (auto& k : m_cards)
 		{

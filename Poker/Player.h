@@ -27,17 +27,10 @@ class Card;
 
 class Player
 {
-private:
-	Card cardOne;
-	Card cardTwo;
-	std::string username;
-	uint32_t chips = 1000;
-	uint32_t max_chips = 0;
-	uint32_t bet = 0;
-	bool m_isFolded = false;
+
 public:
 	bool eligible = true;
-	Player() = default;
+	Player();
 	~Player() = default;
 	void setChips(uint32_t chips);
 	void setCardOne(Card&& card1);
@@ -50,4 +43,11 @@ public:
 	std::string& getUsername();
 	void fold();
 	bool isFolded();
+	Card cardOne;
+	Card cardTwo;
+	std::string username;
+	uint32_t chips;
+	uint32_t max_chips = 0;
+	uint32_t bet = 0;
+	bool m_isFolded = false;
 };

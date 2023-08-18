@@ -5,25 +5,24 @@
 #include<vector>
 #include<set>
 
-class Player;
-class Card;
-class Deck;
-
 class Game
 {
-private:
-	uint32_t m_playerCount;
-	std::vector<Player> m_players;
-	Deck m_deck;
-	std::string userWon;
-	uint32_t pool;
-	uint32_t overPool;
-	std::set<std::string> m_foldedPlayers;
-	uint32_t cardCounter = 0;
-	uint32_t m_pot = 0;
 public:
 	void start();
-	void addPlayer();
 	void startBettingRound(uint32_t gameCounter);
 	bool everyoneFolded();	
+	Game();
+	uint32_t m_playerCount;
+	uint32_t card;
+	uint32_t cardCounter;
+	uint32_t currentBet;
+	uint32_t roundBet;
+	uint32_t m_pot;
+	std::vector<Player> m_players;
+	std::set<std::string> m_foldedPlayers;
+	std::string userWon;
+	Deck m_deck;
+	void bet();
+	void addPlayer();
+	int allBetsAreSame();
 }; 

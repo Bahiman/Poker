@@ -27,7 +27,7 @@ Player::Player(Card&& card1, Card&& card2, std::string&& username)
 {
 	setCardOne(std::move(card1));
 	setCardTwo(std::move(card2));
-	setChips(0);
+	setChips(1000);
 	this->username = std::move(username);
 #ifdef DEBUG
 	std::cout << "The username is " << this->username << " and " << *getCards() << std::endl;
@@ -37,6 +37,10 @@ Player::Player(Card&& card1, Card&& card2, std::string&& username)
 
 uint32_t Player::getChips()
 {
+#ifdef DEBUG
+	std::cout << chips << " are the chips!\n";
+#endif // DEBUG
+
 	return chips;
 }
 
@@ -70,4 +74,9 @@ void Player::fold()
 bool Player::isFolded()
 {
 	return m_isFolded;
+}
+
+Player::Player()
+{
+	chips = 1000;
 }
